@@ -1,0 +1,35 @@
+{
+  "name": "three-playground",
+  "version": "1.0.0",
+  "description": "A sandbox for Three JS and Shader practice",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx snowpack dev",
+    "build": "npx snowpack build"
+  },
+  "author": "Aakash Mallik",
+  "license": "ISC",
+  "dependencies": {
+    "@snowpack/plugin-run-script": "^2.3.0",
+    "three": "^0.133.1"
+  },
+  "devDependencies": {
+    "@snowpack/plugin-postcss": "^1.4.3",
+    "@snowpack/plugin-typescript": "^1.2.1",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.29.3",
+    "autoprefixer": "^10.3.7",
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb-typescript": "^14.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "postcss": "^8.3.9",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.2.1",
+    "snowpack": "^3.8.8",
+    "snowpack-plugin-glslify": "^1.0.0",
+    "typescript": "^4.4.4"
+  }
+}
