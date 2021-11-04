@@ -1,5 +1,16 @@
 import './global.css';
+import fragmentShader from './shaders/fragment.glsl';
+import vertexShader from './shaders/vertex.glsl';
 
-console.log('well, that seems to work well');
+import { applyShaders, initializeCanvas } from './utils/setup';
 
-export {};
+function main() {
+  const canvas = initializeCanvas(document.querySelector('body'), {
+    height: window.innerHeight,
+    width: window.innerWidth
+  });
+
+  applyShaders(canvas, vertexShader, fragmentShader);
+}
+
+main();

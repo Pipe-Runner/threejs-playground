@@ -1,5 +1,5 @@
 {
-  "include": ["src", "snowpack.config.js"],
+  "include": ["src", "./@types/*.d.ts", "snowpack.config.js"],
   "compilerOptions": {
     "module": "esnext",
     "target": "esnext",
