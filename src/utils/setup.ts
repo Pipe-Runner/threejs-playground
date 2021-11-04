@@ -1,3 +1,5 @@
+import { compileShader, createProgram } from './webgl';
+
 export function initializeCanvas(
   container: HTMLElement | null,
   size: { height: number; width: number }
@@ -19,11 +21,11 @@ export function initializeCanvas(
   return canvas;
 }
 
-export function applyShaders(
+export function initializeWithShaders(
   canvas: HTMLCanvasElement,
-  vertexShader: string,
-  fragmentShader: string
-): { canvas: HTMLCanvasElement; context: WebGLRenderingContext } {
+  vertexShaderSource: string,
+  fragmentShaderSource: string
+): { canvas: HTMLCanvasElement; context: WebGLRenderingContext; program: WebGLProgram } {
   if (!canvas) {
     throw new Error('Canvas not available. Cannot apply shader!');
   }
@@ -34,5 +36,10 @@ export function applyShaders(
     throw new Error('WebGL not supported!');
   }
 
-  return { canvas, context };
+  const vertexShader = compileShader(context, vertexShaderSource, context.VERTEX_SHADER);
+  const fragmentShader = compileShader(context, fragmentShaderSource, context.FRAGMENT_SHADER);
+
+  const program = createProgram(context, vertexShader, fragmentShader);
+
+  return { canvas, context, program };
 }
